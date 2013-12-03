@@ -1,6 +1,7 @@
 DemoApp::Application.routes.draw do
   get "static_pages/home"
   get "static_pages/help"
+  get "static_pages/about"
   resources :microposts
 
   resources :users
@@ -45,7 +46,7 @@ DemoApp::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
