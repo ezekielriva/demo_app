@@ -22,5 +22,7 @@ module DemoApp
 
     # Precompile assets
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+
+    config.i18n.enforce_available_locales = true
   end
 end
