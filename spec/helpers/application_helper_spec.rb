@@ -15,4 +15,15 @@ describe ApplicationHelper do
       expect(full_title("")).not_to match(/\|/)
     end
   end
+
+  describe "alert_class" do
+    let(:key) { 'success' }
+    it "should response with danger when key is error" do
+      expect( alert_class('error') ).to eql('danger')
+    end
+
+    it "shoud response key when key isn't error" do
+      expect( alert_class(key) ).to eql(key)
+    end
+  end
 end

@@ -10,7 +10,7 @@ module ApplicationHelper
   end
 
   def alert_class(key)
-    key unless key == 'error'
+    return key unless key == 'error'
     'danger'
   end
 end
