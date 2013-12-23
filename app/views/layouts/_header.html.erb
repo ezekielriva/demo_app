@@ -13,7 +13,17 @@
     <ul class="nav navbar-nav navbar-right">
       <li><%= link_to "Home",    root_path %></li>
       <li><%= link_to "Help",    help_path %></li>
-      <li><%= link_to "Sign in", '#' %></li>
+      <% if @current_user %>
+      <li>
+        <a href="<%= "http://facebook.com/#{@current_user.uid}" %>" target="blank">
+          <img src="<%= @current_user.image %>" alt="<%= @current_user.name %>">
+          <%= @current_user.name %>
+        </a>
+      </li>
+      <li><%= link_to 'Sign out', 'signout' %></li>
+      <% else %>
+        <li><%= link_to "Sign in", 'auth/facebook' %></li>
+      <% end %>
     </ul>
   </div>
 </nav>
